@@ -128,7 +128,7 @@ resource "aws_eip" "ci" {
 #EC2 instances
 resource "aws_instance" "jenkins" {
   ami                         = data.aws_ami.latest_ubuntu.id
-  instance_type               = "t3.medium"
+  instance_type               = "r5a.2xlarge"
   subnet_id                   = var.public_subnet_id
   iam_instance_profile        = aws_iam_instance_profile.profile_fp.name
   vpc_security_group_ids      = [aws_security_group.security_group_fp.id]
